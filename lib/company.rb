@@ -15,7 +15,11 @@ class Company
   def load_employees(filename)
     CSV.foreach(filename, headers: false) do |data|
       @status = returns(data, 5)
-      @employees << data if @status[:success] == true && @status[:error].nil?
+      if @status[:success] == true && @status[:error].nil?
+        @employees << data
+      else
+        @status = {:success=>false, :error=>"bad data"}
+      end
     end
     @status
   end
