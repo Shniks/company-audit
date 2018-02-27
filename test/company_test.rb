@@ -67,7 +67,7 @@ class CompanyTest < Minitest::Test
     assert_nil nil, company.find_employee_by_id(5)
   end
 
-  def test_it_can_find_employee_by_id
+  def test_it_can_find_project_by_id
     company = Company.new
     filename = './data/projects.csv'
     result = company.load_projects(filename)
