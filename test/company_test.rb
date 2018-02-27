@@ -31,4 +31,18 @@ class CompanyTest < Minitest::Test
     assert_equal ({success: false, error: 'bad data'}), company.load_employees(filename)
   end
 
+  def test_if_it_can_load_timesheets
+    company = Company.new
+    filename = './data/good_timesheets.csv'
+
+    assert_equal ({success: true, error: nil}), company.load_timesheets(filename)
+  end
+
+  def test_if_it_gives_error_with_bad_timesheets_data
+    company = Company.new
+    filename = './data/bad_timesheets.csv'
+
+    assert_equal ({success: false, error: 'bad data'}), company.load_timesheets(filename)
+  end
+
 end
