@@ -1,15 +1,20 @@
 require './test/test_helper'
-require './lib/project'
+require './lib/timesheet'
 
-class ProjectTest < Minitest::Test
+class TimeheetTest < Minitest::Test
 
   def test_instantiation
-    project = Project.new('123', 'Widget Maker', '2015-01-01', '2018-01-01')
+    employee_id = '5'
+    project_id = '7'
+    date = '2015-01-01'
+    minutes = '120'
+    timesheet = Timesheet.new(employee_id, project_id, date, minutes)
 
-    assert_instance_of Project, project
+    assert_instance_of Timesheet, timesheet
   end
 
   def test_attributes
+    skip
     project = Project.new('123', 'Widget Maker', '2015-01-01', '2018-01-01')
 
     assert_equal 123, project.id
