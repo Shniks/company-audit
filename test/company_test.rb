@@ -17,7 +17,11 @@ class CompanyTest < Minitest::Test
     assert company.timesheets.empty?
   end
 
+  def test_if_it_can_load_employees
+    company = Company.new
+    filename = './data/employees.csv'
 
-
+    assert_equal ({success: true, error: nil}), company.load_employees(filename)
+  end
 
 end
