@@ -14,14 +14,18 @@ class TimeheetTest < Minitest::Test
   end
 
   def test_attributes
-    skip
-    project = Project.new('123', 'Widget Maker', '2015-01-01', '2018-01-01')
+    employee_id = '5'
+    project_id = '7'
+    date = '2015-01-01'
+    minutes = '120'
+    timesheet = Timesheet.new(employee_id, project_id, date, minutes)
 
-    assert_equal 123, project.id
-    assert project.id.class == Integer
-    assert_equal 'Widget Maker', project.name
-    assert_instance_of Date, project.start_date
-    assert_instance_of Date, project.end_date
+    assert timesheet.employee_id.class == Integer
+    assert timesheet.project_id.class == Integer
+    assert_equal 5, timesheet.employee_id
+    assert_equal 7, timesheet.project_id
+    assert_instance_of Date, timesheet.date
+    assert timesheet.minutes.class == Integer
   end
 
 end
