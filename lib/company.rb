@@ -14,9 +14,18 @@ class Company
 
   def load_employees(filename)
     CSV.foreach(filename, headers: false) do |data|
+      return(data, )
       @employees << data
     end
-    binding.pry
+  end
+
+  def return(data, size)
+    return_value = { success: true, error: nil }
+    data.each do |data|
+      return_value[:error] = 'bad data' if data.length < size
+    end
+    return_value[:success] = true if return_value[:error] == nil
+    return_value
   end
 
 end
