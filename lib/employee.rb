@@ -1,5 +1,4 @@
 class Employee
-
   attr_reader :id,
               :name,
               :role,
@@ -13,5 +12,4 @@ class Employee
     @start_date   = DateHandler.string_to_date(start_date)
     @end_date     = DateHandler.string_to_date(end_date)
   end
-
 end

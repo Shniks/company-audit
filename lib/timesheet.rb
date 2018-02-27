@@ -1,5 +1,4 @@
 class Timesheet
-
   attr_reader :employee_id,
               :project_id,
               :date,
@@ -11,5 +10,4 @@ class Timesheet
     @date         = DateHandler.string_to_date(date)
     @minutes      = minutes.to_i
   end
-
 end

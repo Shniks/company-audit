@@ -2,7 +2,6 @@ require './test/test_helper'
 require './lib/employee'
 
 class EmployeeTest < Minitest::Test
-
   def test_instantiation
     employee_id = '5'
     name = 'Sally Jackson'
@@ -29,5 +28,4 @@ class EmployeeTest < Minitest::Test
     assert_instance_of Date, employee.start_date
     assert_instance_of Date, employee.end_date
   end
-
 end

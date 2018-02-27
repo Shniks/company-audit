@@ -2,7 +2,6 @@ require './test/test_helper'
 require './lib/timesheet'
 
 class TimeheetTest < Minitest::Test
-
   def test_instantiation
     employee_id = '5'
     project_id = '7'
@@ -27,5 +26,4 @@ class TimeheetTest < Minitest::Test
     assert_instance_of Date, timesheet.date
     assert timesheet.minutes.class == Integer
   end
-
 end
